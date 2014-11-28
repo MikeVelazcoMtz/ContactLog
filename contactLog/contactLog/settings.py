@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.locations',  # Contains Estado, Ciudad, Sucursal
-    'apps.account',
+    'apps.account',  # userprofile
+    'apps.contact',  # contact list
 )
 
 MIDDLEWARE_CLASSES = (
