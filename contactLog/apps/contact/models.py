@@ -7,7 +7,7 @@ from apps.locations.models import Ciudad
 
 # Model for Sucursales
 class Sucursales(models.Model):
-    street = models.CharField(max_length=45)
+    street = models.CharField('Calle', max_length=45)
     ciudad = models.ForeignKey(Ciudad)
 
     class Meta:
@@ -20,11 +20,11 @@ class Sucursales(models.Model):
 
 # Model for Contacts
 class Contacts(models.Model):
-    name = models.CharField(max_length=45)
-    street = models.CharField(max_length=45)
-    num_ext = models.CharField(max_length=5)
-    colonia = models.CharField(max_length=45)
-    zip_code = models.PositiveSmallIntegerField(max_length=5)
+    name = models.CharField('Nombre', max_length=45)
+    street = models.CharField('Calle', max_length=45)
+    num_ext = models.CharField('Número', max_length=5)
+    colonia = models.CharField('Colonia', max_length=45)
+    zip_code = models.PositiveSmallIntegerField('Código Postal', max_length=5)
     ciudad = models.ForeignKey(Ciudad)
     sucursales = models.ForeignKey(Sucursales)
 
