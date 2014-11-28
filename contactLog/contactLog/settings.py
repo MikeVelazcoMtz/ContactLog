@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for contactLog project.
 
@@ -69,7 +70,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
