@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 
 
@@ -5,35 +6,35 @@ from django.db import models
 class Estado(models.Model):
 
     class Meta:
-        verbose_name = "Estado"
-        verbose_name_plural = "Estados"
-    Nombre = models.CharField("Nombre", max_length=50)
+        verbose_name = u"Estado"
+        verbose_name_plural = u"Estados"
+    Nombre = models.CharField(u"Nombre", max_length=50, unique=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.Nombre
 
 
 class Ciudad(models.Model):
 
     class Meta:
-        verbose_name = "Ciudad"
-        verbose_name_plural = "Ciudades"
+        verbose_name = u"Ciudad"
+        verbose_name_plural = u"Ciudades"
 
-    Nombre = models.CharField("Nombre", max_length=50)
+    Nombre = models.CharField(u"Nombre", max_length=50)
     Estado = models.ForeignKey(Estado)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.Nombre
 
 
 class Sucursal(models.Model):
 
     class Meta:
-        verbose_name = "Sucursal"
-        verbose_name_plural = "Sucursales"
+        verbose_name = u"Sucursal"
+        verbose_name_plural = u"Sucursales"
 
-    Street = models.CharField("Calle", max_length=45)
+    Street = models.CharField(u"Calle", max_length=45)
     Ciudad = models.ForeignKey(Ciudad)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.Street

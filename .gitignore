@@ -2,3 +2,5 @@
 contactLog/*.pyc
 contactLog/apps/*.pyc
 contactLog/apps/locations/*.pyc
+
+contactLog/contactLog/settings.pyc
