@@ -1,1 +1,4 @@
 *.pyc
+contactLog/*.pyc
+contactLog/apps/*.pyc
+contactLog/apps/locations/*.pyc
