@@ -8,7 +8,7 @@ class Estado(models.Model):
     class Meta:
         verbose_name = u"Estado"
         verbose_name_plural = u"Estados"
-    Nombre = models.CharField(u"Nombre", max_length=50)
+    Nombre = models.CharField(u"Nombre", max_length=50, unique=True)
 
     def __unicode__(self):
         return self.Nombre
