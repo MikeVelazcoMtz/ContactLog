@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.locations',
+    'apps.locations',  # Contains Estado, Ciudad, Sucursal
 )
 
 MIDDLEWARE_CLASSES = (

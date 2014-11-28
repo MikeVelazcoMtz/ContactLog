@@ -4,3 +4,4 @@ from . import models
 
 admin.site.register(models.Estado)
 admin.site.register(models.Ciudad)
+admin.site.register(models.Sucursal)
