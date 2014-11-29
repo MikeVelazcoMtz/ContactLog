@@ -12,7 +12,7 @@
         {% bootstrap_messages %}        
         <script>
             $(document).ready(function() {
-                alert("Hello World");
+                // alert("Hello World");
                 $("input").addClass('form-control');
             });
         </script>
@@ -36,95 +36,98 @@
                     Agregar contacto
                 </button>
                 <br>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Calle</th>
-                            <th>Número</th>
-                            <th>Colonia</th>
-                            <th>Código Postal</th>
-                            <th>Ciudad</th>
-                            <th>Sucursal</th>
-                            <th>Accion</th>
-                        </tr>                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>d</td>
-                            <td>e</td>
-                            <td>f</td>
-                            <td>g</td>
-                        </tr>
-                        {% if form %}
-                        <tr>
-                            <td>
-                                {{ form.name }}
-                                {# {% bootstrap_field form.nombre %} #}
-                            </td>
-                            <td>
-                                {{ form.street }}
-                                {# {% bootstrap_field form.street %} #}
-                            </td>
-                            <td>
-                                {{ form.num_ext }}
-                                {# {% bootstrap_field form.num_ext %} #}
-                            </td>
-                            <td>
-                                {{ form.colonia }}
-                                {# {% bootstrap_field form.colonia %} #}
-                            </td>
-                            <td>
-                                {{ form.zip_code }}
-                                {# {% bootstrap_field form.zip_code %} #}
-                            </td>
-                            <td><!-- FK -->
-                                {{ form.ciudad }}
-                                {# {% bootstrap_field form.ciudad %} #}
-                            </td>
-                            <td><!-- FK -->
-                                {{ form.sucursal }}
-                                {# {% bootstrap_field form.sucursales %} #}
-                                {# {% bootstrap_form form %} #}
-                            </td>
-                            <td>
-                                <button type="submit" class="btn btn-primary">
-                                  {% bootstrap_icon "star" %} Submit
-                                </button> 
-                            </td>
-                        </tr>   
-                        {% endif %}
-                        
-                        {% for item in items %}
+                <form action="." method="POST">
+                    {% csrf_token %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Calle</th>
+                                <th>Número</th>
+                                <th>Colonia</th>
+                                <th>Código Postal</th>
+                                <th>Ciudad</th>
+                                <th>Sucursal</th>
+                                <th>Accion</th>
+                            </tr>                        
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>a</td>
+                                <td>b</td>
+                                <td>c</td>
+                                <td>d</td>
+                                <td>e</td>
+                                <td>f</td>
+                                <td>g</td>
+                            </tr>
+                            {% if form %}
                             <tr>
                                 <td>
-                                    {{ item.name }}
+                                    {{ form.name }}
+                                    {# {% bootstrap_field form.nombre %} #}
                                 </td>
                                 <td>
-                                    {{ item.street }}
+                                    {{ form.street }}
+                                    {# {% bootstrap_field form.street %} #}
                                 </td>
                                 <td>
-                                    {{ item.num_ext }}
+                                    {{ form.num_ext }}
+                                    {# {% bootstrap_field form.num_ext %} #}
                                 </td>
                                 <td>
-                                    {{ item.colonia }}
+                                    {{ form.colonia }}
+                                    {# {% bootstrap_field form.colonia %} #}
                                 </td>
                                 <td>
-                                    {{ item.zip_code }}
+                                    {{ form.zip_code }}
+                                    {# {% bootstrap_field form.zip_code %} #}
                                 </td>
                                 <td><!-- FK -->
-                                    {{ item.ciudad }}
+                                    {{ form.ciudad }}
+                                    {# {% bootstrap_field form.ciudad %} #}
                                 </td>
                                 <td><!-- FK -->
-                                    {{ item.sucursales }}
+                                    {{ form.sucursal }}
+                                    {# {% bootstrap_field form.sucursales %} #}
+                                    {# {% bootstrap_form form %} #}
                                 </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">
+                                      {% bootstrap_icon "star" %} Submit
+                                    </button> 
+                                </td>
+                            </tr>   
+                            {% endif %}
+                            
+                            {% for item in items %}
+                                <tr>
+                                    <td>
+                                        {{ item.name }}
+                                    </td>
+                                    <td>
+                                        {{ item.street }}
+                                    </td>
+                                    <td>
+                                        {{ item.num_ext }}
+                                    </td>
+                                    <td>
+                                        {{ item.colonia }}
+                                    </td>
+                                    <td>
+                                        {{ item.zip_code }}
+                                    </td>
+                                    <td><!-- FK -->
+                                        {{ item.ciudad }}
+                                    </td>
+                                    <td><!-- FK -->
+                                        {{ item.sucursales }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
