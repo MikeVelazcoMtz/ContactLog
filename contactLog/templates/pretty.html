@@ -13,6 +13,7 @@
         <script>
             $(document).ready(function() {
                 alert("Hello World");
+                $("input").addClass('form-control');
             });
         </script>
     </head>
@@ -61,25 +62,33 @@
                         {% if form %}
                         <tr>
                             <td>
-                                {% bootstrap_field form.nombre %}
+                                {{ form.name }}
+                                {# {% bootstrap_field form.nombre %} #}
                             </td>
                             <td>
-                                {% bootstrap_field form.street %}
+                                {{ form.street }}
+                                {# {% bootstrap_field form.street %} #}
                             </td>
                             <td>
-                                {% bootstrap_field form.num_ext %}
+                                {{ form.num_ext }}
+                                {# {% bootstrap_field form.num_ext %} #}
                             </td>
                             <td>
-                                {% bootstrap_field form.colonia %}
+                                {{ form.colonia }}
+                                {# {% bootstrap_field form.colonia %} #}
                             </td>
                             <td>
-                                {% bootstrap_field form.zip_code %}
+                                {{ form.zip_code }}
+                                {# {% bootstrap_field form.zip_code %} #}
                             </td>
                             <td><!-- FK -->
-                                {% bootstrap_field form.ciudad %}
+                                {{ form.ciudad }}
+                                {# {% bootstrap_field form.ciudad %} #}
                             </td>
                             <td><!-- FK -->
-                                {% bootstrap_field form.sucursales %}
+                                {{ form.sucursal }}
+                                {# {% bootstrap_field form.sucursales %} #}
+                                {# {% bootstrap_form form %} #}
                             </td>
                             <td>
                                 <button type="submit" class="btn btn-primary">
@@ -92,25 +101,25 @@
                         {% for item in items %}
                             <tr>
                                 <td>
-                                    {{ item.nombre }}
+                                    {{ item.name }}
                                 </td>
                                 <td>
-                                    {{ item.calle }}
+                                    {{ item.street }}
                                 </td>
                                 <td>
-                                    {{ item.numero }}
+                                    {{ item.num_ext }}
                                 </td>
                                 <td>
                                     {{ item.colonia }}
                                 </td>
                                 <td>
-                                    {{ item.cp }}
+                                    {{ item.zip_code }}
                                 </td>
                                 <td><!-- FK -->
                                     {{ item.ciudad }}
                                 </td>
                                 <td><!-- FK -->
-                                    {{ item.sucursal }}
+                                    {{ item.sucursales }}
                                 </td>
                             </tr>
                         {% endfor %}
