@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from apps.locations.models import Ciudad
+from apps.locations.models import Ciudad, Sucursal
 
 
 # Model for Sucursales
@@ -26,7 +26,7 @@ class Contacts(models.Model):
     colonia = models.CharField('Colonia', max_length=45)
     zip_code = models.PositiveSmallIntegerField('Código Postal', max_length=5)
     ciudad = models.ForeignKey(Ciudad)
-    sucursales = models.ForeignKey(Sucursales)
+    sucursales = models.ForeignKey(Sucursal)
 
     class Meta:
         verbose_name = 'Contacto'
