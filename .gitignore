@@ -6,3 +6,5 @@ contactLog/apps/*.pyc
 contactLog/apps/locations/*.pyc
 
 contactLog/contactLog/settings.pyc
+
+contactLog/contactLog/settings.pyc

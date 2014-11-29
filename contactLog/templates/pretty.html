@@ -4,13 +4,131 @@
         <title>Registro de Contactos - {{ action }} - </title>
         <meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}        
         <script>
             $(document).ready(function() {
-                
+                alert("Hello World");
             });
         </script>
     </head>
     <body>
-        
+        <div class="container">
+            <div class="header">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation" class="active"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="#">About</a></li>
+                        <li role="presentation"><a href="#">Contact</a></li>
+                    </ul>
+                    <h3 class="text-muted">Contactos</h3>
+                </nav>
+            </div>
+            <hr>
+            <div class="jumbotron">
+                <h1>Contactos</h1>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Agregar contacto
+                </button>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Calle</th>
+                            <th>Número</th>
+                            <th>Colonia</th>
+                            <th>Código Postal</th>
+                            <th>Ciudad</th>
+                            <th>Sucursal</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>a</td>
+                            <td>b</td>
+                            <td>c</td>
+                            <td>d</td>
+                            <td>e</td>
+                            <td>f</td>
+                            <td>g</td>
+                        </tr>
+                        {% if form %}
+                        <tr>
+                            <td>
+                                {{ bootstrap_field form.nombre }}
+                            </td>
+                            <td>
+                                {{ bootstrap_field form.calle }}
+                            </td>
+                            <td>
+                                {{ bootstrap_field form.numero }}
+                            </td>
+                            <td>
+                                {{ bootstrap_field form.colonia }}
+                            </td>
+                            <td>
+                                {{ bootstrap_field form.cp }}
+                            </td>
+                            <td><!-- FK -->
+                                {{ bootstrap_field form.ciudad }}
+                            </td>
+                            <td><!-- FK -->
+                                {{ bootstrap_field form.sucursal }}
+                            </td>
+                        </tr>   
+                        {% endif %}
+                        
+                        {% for item in items %}
+                            <tr>
+                                <td>
+                                    {{ item.nombre }}
+                                </td>
+                                <td>
+                                    {{ item.calle }}
+                                </td>
+                                <td>
+                                    {{ item.numero }}
+                                </td>
+                                <td>
+                                    {{ item.colonia }}
+                                </td>
+                                <td>
+                                    {{ item.cp }}
+                                </td>
+                                <td><!-- FK -->
+                                    {{ item.ciudad }}
+                                </td>
+                                <td><!-- FK -->
+                                    {{ item.sucursal }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
