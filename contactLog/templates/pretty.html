@@ -45,6 +45,7 @@
                             <th>Código Postal</th>
                             <th>Ciudad</th>
                             <th>Sucursal</th>
+                            <th>Accion</th>
                         </tr>                        
                     </thead>
                     <tbody>
@@ -63,22 +64,27 @@
                                 {{ bootstrap_field form.nombre }}
                             </td>
                             <td>
-                                {{ bootstrap_field form.calle }}
+                                {{ bootstrap_field form.street }}
                             </td>
                             <td>
-                                {{ bootstrap_field form.numero }}
+                                {{ bootstrap_field form.num_ext }}
                             </td>
                             <td>
                                 {{ bootstrap_field form.colonia }}
                             </td>
                             <td>
-                                {{ bootstrap_field form.cp }}
+                                {{ bootstrap_field form.zip_code }}
                             </td>
                             <td><!-- FK -->
                                 {{ bootstrap_field form.ciudad }}
                             </td>
                             <td><!-- FK -->
-                                {{ bootstrap_field form.sucursal }}
+                                {{ bootstrap_field form.sucursales }}
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">
+                                  {% bootstrap_icon "star" %} Submit
+                                </button> 
                             </td>
                         </tr>   
                         {% endif %}
