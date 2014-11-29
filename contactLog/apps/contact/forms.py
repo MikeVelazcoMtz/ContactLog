@@ -20,3 +20,4 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = Contacts
+        exclude = {'sucursales', }

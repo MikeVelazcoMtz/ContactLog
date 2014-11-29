@@ -7,7 +7,7 @@ from .forms import ContactForm
 
 
 class ContactView(LoginRequiredMixin, FormView):
-    template_name = 'contact/list.html'
+    template_name = 'pretty.html'
     form_class = ContactForm
     success_url = 'contact/'
 

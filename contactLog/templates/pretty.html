@@ -61,25 +61,7 @@
                         {% if form %}
                         <tr>
                             <td>
-                                {{ bootstrap_field form.nombre }}
-                            </td>
-                            <td>
-                                {{ bootstrap_field form.street }}
-                            </td>
-                            <td>
-                                {{ bootstrap_field form.num_ext }}
-                            </td>
-                            <td>
-                                {{ bootstrap_field form.colonia }}
-                            </td>
-                            <td>
-                                {{ bootstrap_field form.zip_code }}
-                            </td>
-                            <td><!-- FK -->
-                                {{ bootstrap_field form.ciudad }}
-                            </td>
-                            <td><!-- FK -->
-                                {{ bootstrap_field form.sucursales }}
+                                {% bootstrap_form form %}
                             </td>
                             <td>
                                 <button type="submit" class="btn btn-primary">
